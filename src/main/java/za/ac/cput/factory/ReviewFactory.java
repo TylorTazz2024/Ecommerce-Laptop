@@ -1,6 +1,6 @@
 package za.ac.cput.factory;
 
-import com.capstone.domain.Review;
+import za.ac.cput.domain.Review;
 
 public class ReviewFactory {
     public static Review buildReview(String rating, String comment) {
