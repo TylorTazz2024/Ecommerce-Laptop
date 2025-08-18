@@ -1,12 +1,14 @@
 package za.ac.cput.factory;
-
 import za.ac.cput.domain.Review;
+import za.ac.cput.util.ReviewHelper;
 
 public class ReviewFactory {
     public static Review buildReview(String rating, String comment) {
-        if (rating == null || rating.isEmpty() || comment == null || comment.isEmpty()) {
-            throw new IllegalArgumentException("Rating and comment must not be empty");
+        if (!ReviewHelper.isValidRating(rating)) {
+            throw new IllegalArgumentException("Invalid rating, must be between 1 and 5");
         }
-        return new Review(rating, comment);
+
+        String cleanComment = ReviewHelper.sanitizeComment(comment);
+        return new Review(rating, cleanComment);
     }
 }
