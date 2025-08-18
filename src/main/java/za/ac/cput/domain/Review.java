@@ -1,5 +1,5 @@
 package za.ac.cput.domain;
-
+import jakarta.persistence.*;
 
 // POJO class for Review
 
@@ -7,62 +7,46 @@ package za.ac.cput.domain;
      Review POJO class
     Author: S.Malotana (221800662) */
 
-
-
+@Entity
 public class Review {
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reviewID;
+
     private String rating;
     private String comment;
 
-    protected Review() {
-    }
-    private Review(Builder builder) {
-        this.reviewID = builder.reviewID;
-        this.rating = builder.rating;
-        this.comment = builder.comment;
+    
+    public Review() {}
+
+    public Review(String rating, String comment) {
+        this.rating = rating;
+        this.comment = comment;
     }
 
+   
     public int getReviewID() {
-        return reviewID;
+         return reviewID;
+    }
+     
+    public void setReviewID(int reviewID) {
+         this.reviewID = reviewID;
     }
 
     public String getRating() {
-        return rating;
+         return rating;
+    }
+     
+    public void setRating(String rating) { 
+         this.rating = rating; 
     }
 
-    public String getComment() {
-        return comment;
+    public String getComment() { 
+         return comment; 
     }
-
-
-    public static class Builder {
-        private int reviewID;
-        private String rating;
-        private String comment;
-
-
-        public Builder setReviewID(int reviewID) {
-            this.reviewID = reviewID;
-            return this;
-        }
-
-
-        public Builder setRating(String rating) {
-            this.rating = rating;
-            return this;
-        }
-
-
-        public Builder setComment(String comment) {
-            this.comment = comment;
-            return this;
-        }
-
-
-        public Review build() {
-            return new Review(this);
-        }
+     
+    public void setComment(String comment) { 
+         this.comment = comment; 
     }
 }
+
