@@ -32,7 +32,8 @@ public class Contact {
         }
 
         @Override public String toString() {
-            return "Contact{" + "contactID=" + contactID +
+            return "Contact{"
+                    + "contactID=" + contactID +
                     ", email='" + email + '\''
                     + ", phoneNumber='" + phoneNumber
                     + '\'' + '}';
