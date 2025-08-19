@@ -69,6 +69,10 @@ public class Laptop {
                 '}';
     }
 
+    public Builder setLaptopID(int laptopID) {
+        return null;
+    }
+
 
     public static class Builder {
 
