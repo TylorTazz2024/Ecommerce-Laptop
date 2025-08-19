@@ -1,4 +1,8 @@
 package za.ac.cput.domain;
+/* Laptop.java
+Laptop domain Class
+Author: Nontando Zondi 221248986
+*/
 
 import jakarta.persistence.*;
 
