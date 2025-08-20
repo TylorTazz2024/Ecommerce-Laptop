@@ -1,5 +1,7 @@
 package za.ac.cput.util;
 
+import java.util.UUID;
+
 public class Helper {
 
     public static boolean isNullOrEmpty(String s) {
@@ -7,5 +9,7 @@ public class Helper {
             return true;
         return false;
     }
-
+    public static int generateId() {
+        return UUID.randomUUID().hashCode();
+    }
 }
