@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="378799b9-7006-4851-ba6c-e07d105b9f8f" name="Changes" comment="Laptop factory, helper">
+      <change afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/repository/ILaptopRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="221248986" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;andiswaantando&quot;
+  }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOPgIlQ86kUuXt&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1755618618759
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/andiswaantando/Ecommerce-Laptop.git&quot;,
+    &quot;accountId&quot;: &quot;9521a837-eecc-4b65-b1ea-b55cf0844bda&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;andiswaantando&quot;,
+    &quot;repository&quot;: &quot;Ecommerce-Laptop&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="31TWEDVeqfdS1xdhWESxGSSzlaL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.109" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.109" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="378799b9-7006-4851-ba6c-e07d105b9f8f" name="Changes" comment="" />
+      <created>1755548430107</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755548430107</updated>
+      <workItem from="1755548434555" duration="3281000" />
+      <workItem from="1755603997116" duration="70000" />
+      <workItem from="1755604404720" duration="17000" />
+      <workItem from="1755604456495" duration="3935000" />
+      <workItem from="1755609894806" duration="105000" />
+      <workItem from="1755610105772" duration="2839000" />
+      <workItem from="1755613266407" duration="26000" />
+      <workItem from="1755615590186" duration="2842000" />
+      <workItem from="1755619023193" duration="5000" />
+      <workItem from="1755620160357" duration="16000" />
+      <workItem from="1755620218665" duration="191000" />
+      <workItem from="1755622932780" duration="1430000" />
+      <workItem from="1755632891861" duration="115000" />
+      <workItem from="1755633787062" duration="1544000" />
+      <workItem from="1755680120850" duration="734000" />
+      <workItem from="1755687372763" duration="836000" />
+      <workItem from="1755704239833" duration="7000" />
+      <workItem from="1755792180426" duration="422000" />
+      <workItem from="1755792909542" duration="582000" />
+    </task>
+    <task id="LOCAL-00001" summary="Laptop domain">
+      <option name="closed" value="true" />
+      <created>1755609456593</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755609456593</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Laptop domain">
+      <option name="closed" value="true" />
+      <created>1755609711659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755609711661</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Laptop domain">
+      <option name="closed" value="true" />
+      <created>1755610170370</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755610170370</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Laptop factory, helper">
+      <option name="closed" value="true" />
+      <created>1755618007594</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755618007594</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Laptop domain" />
+    <MESSAGE value="Laptop factory, helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Laptop factory, helper" />
+  </component>
+</project>
