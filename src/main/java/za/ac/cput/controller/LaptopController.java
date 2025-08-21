@@ -1,0 +1,6 @@
+package za.ac.cput.controller;
+
+public class LaptopController {
+
+
+}
