@@ -7,7 +7,7 @@ import java.util.Date;
 public class OrderFactory {
 
 
-    public static Order createOrder(int orderID, double totalAmount) {
+    public static Order createOrder(double totalAmount) {
         return new Order.Builder()
                 .setOrderID(orderID)
                 .setOrderDate(new Date()) // Automatically set current date
