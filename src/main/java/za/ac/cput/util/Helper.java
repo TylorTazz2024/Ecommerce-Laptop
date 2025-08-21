@@ -1,15 +1,25 @@
 package za.ac.cput.util;
 
-import java.util.UUID;
-
 public class Helper {
 
     public static boolean isNullOrEmpty(String s) {
-        if (s.isEmpty() || s == null)
-            return true;
-        return false;
+        return s == null || s.trim().isEmpty();
     }
-    public static int generateId() {
-        return UUID.randomUUID().hashCode();
+
+    public static boolean isValidRating(String rating) {
+        if (isNullOrEmpty(rating)) return false;
+        try {
+            int value = Integer.parseInt(rating);
+            return value >= 1 && value <= 5;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public static String sanitizeComment(String comment) {
+        if (isNullOrEmpty(comment)) {
+            throw new IllegalArgumentException("Comment cannot be empty");
+        }
+        return comment.trim();
     }
 }
