@@ -1,25 +1,15 @@
-package za.ac.cput.factory;
+package com.capstone.factory;
 
-import za.ac.cput.domain.Review;
-import za.ac.cput.util.Helper;
-
-/*
- * ReviewFactory.java
- * Author: S.Malotana (221800662)
- */
+import com.capstone.domain.Review;
+import com.capstone.util.ReviewHelper;
 
 public class ReviewFactory {
-
-    public static Review createReview(int reviewID, String rating, String comment) {
-        if (Helper.isNullOrEmpty(rating) || Helper.isNullOrEmpty(comment)) {
-            return null;
+    public static Review buildReview(String rating, String comment) {
+        if (!ReviewHelper.isValidRating(rating)) {
+            throw new IllegalArgumentException("Invalid rating, must be between 1 and 5");
         }
 
-
-        return new Review.Builder()
-                .setReviewID(reviewID)
-                .setRating(rating)
-                .setComment(comment)
-                .build();
+        String cleanComment = ReviewHelper.sanitizeComment(comment);
+        return new Review(rating, cleanComment);
     }
 }
