@@ -7,7 +7,7 @@ public class Helper {
         return (s == null || s.trim().isEmpty());
     }
 
-    
+
     public static boolean isValidRating(String rating) {
         if (isNullOrEmpty(rating)) {
             return false;
@@ -20,7 +20,7 @@ public class Helper {
         }
     }
 
-    
+   
     public static String sanitizeComment(String comment) {
         if (isNullOrEmpty(comment)) {
             throw new IllegalArgumentException("Comment cannot be empty");
