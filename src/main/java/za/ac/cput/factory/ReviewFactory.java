@@ -1,7 +1,7 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Review;
-import za.ac.cput.util.ReviewHelper;
+import za.ac.cput.util.Helper;
 
 public class ReviewFactory {
     public static Review buildReview(String rating, String comment) {
