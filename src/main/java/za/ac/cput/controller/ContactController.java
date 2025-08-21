@@ -21,6 +21,7 @@ public class ContactController {
 
     @PostMapping("/create")
     public Contact create(@RequestBody Contact contact) {
+
         Contact newContact = ContactFactory.createContact(contact.getEmail(), contact.getPhoneNumber());
         return service.create(newContact);
     }
