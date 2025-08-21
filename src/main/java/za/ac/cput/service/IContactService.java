@@ -1,6 +1,7 @@
 package za.ac.cput.service;
 
 import java.util.List;
+
 import za.ac.cput.domain.Contact;
 
 public interface IContactService {
