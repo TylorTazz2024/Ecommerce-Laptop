@@ -1,130 +1,80 @@
 package za.ac.cput.domain;
 
-/* User.java
-   User POJO class
-   Author: T. Malifethe (222602511)
-   Date: 11 May 2025
-*/
+import jakarta.persistence.*;
 
+/**
+ * User entity
+ * Author: T. Malifethe (222602511)
+ * Date: 25 Aug 2025
+ */
+@Entity
+@Table(name = "users")
 public class User {
-    private int userID;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userID;
+
     private String firstName;
     private String lastName;
+    private String password;
     private String email;
     private String phone;
-    private String password;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
+
+    // ✅ Default constructor for JPA
+    protected User() {}
 
     private User(Builder builder) {
         this.userID = builder.userID;
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
+        this.password = builder.password;
         this.email = builder.email;
         this.phone = builder.phone;
-        this.password = builder.password;
         this.role = builder.role;
     }
 
-    // Getters
-    public int getUserID() {
-        return userID;
-    }
+    // --- Getters ---
+    public Long getUserID() { return userID; }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getPassword() { return password; }
+    public String getEmail() { return email; }
+    public String getPhone() { return phone; }
+    public Role getRole() { return role; }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    // Builder class
+    // --- Builder Pattern ---
     public static class Builder {
-        private int userID;
+        private Long userID;
         private String firstName;
         private String lastName;
+        private String password;
         private String email;
         private String phone;
-        private String password;
         private Role role;
 
-        public Builder setUserID(int userID) {
-            this.userID = userID;
-            return this;
-        }
-
-        public Builder setFirstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
-
-        public Builder setLastName(String lastName) {
-            this.lastName = lastName;
-            return this;
-        }
-
-        public Builder setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-
-        public Builder setPhone(String phone) {
-            this.phone = phone;
-            return this;
-        }
-
-        public Builder setPassword(String password) {
-            this.password = password;
-            return this;
-        }
-
-        public Builder setRole(Role role) {
-            this.role = role;
-            return this;
-        }
+        public Builder setUserID(Long userID) { this.userID = userID; return this; }
+        public Builder setFirstName(String firstName) { this.firstName = firstName; return this; }
+        public Builder setLastName(String lastName) { this.lastName = lastName; return this; }
+        public Builder setPassword(String password) { this.password = password; return this; }
+        public Builder setEmail(String email) { this.email = email; return this; }
+        public Builder setPhone(String phone) { this.phone = phone; return this; }
+        public Builder setRole(Role role) { this.role = role; return this; }
 
         public Builder copy(User user) {
             this.userID = user.userID;
             this.firstName = user.firstName;
             this.lastName = user.lastName;
+            this.password = user.password;
             this.email = user.email;
             this.phone = user.phone;
-            this.password = user.password;
             this.role = user.role;
             return this;
         }
 
-        public User build() {
-            return new User(this);
-        }
-
-        @Override
-        public String toString() {
-            return "User.Builder{" +
-                    "userID=" + userID +
-                    ", firstName='" + firstName + '\'' +
-                    ", lastName='" + lastName + '\'' +
-                    ", email='" + email + '\'' +
-                    ", phone='" + phone + '\'' +
-                    ", password='" + password + '\'' +
-                    ", role=" + role +
-                    '}';
-        }
+        public User build() { return new User(this); }
     }
 }

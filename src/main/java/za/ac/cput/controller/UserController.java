@@ -5,6 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.User;
 import za.ac.cput.domain.Role;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import za.ac.cput.domain.Role;
+import za.ac.cput.domain.User;
 import za.ac.cput.service.UserService;
 
 import java.util.List;
@@ -13,44 +18,42 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserService userService;
+    private final UserService service;
 
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(UserService service) {
+        this.service = service;
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<User> create(@RequestBody User user) {
-        return ResponseEntity.ok(userService.save(user));
+        return ResponseEntity.ok(service.save(user));
     }
 
-    @GetMapping("/read/{id}")
-    public ResponseEntity<User> read(@PathVariable Integer id) {
-        User user = userService.read(id);
+    @GetMapping("/{id}")
+    public ResponseEntity<User> read(@PathVariable Long id) {
+        User user = service.read(id);
         return user != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/update")
+    @PutMapping
     public ResponseEntity<User> update(@RequestBody User user) {
-        User updated = userService.update(user);
-        return updated != null ? ResponseEntity.ok(updated) : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(service.update(user));
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
-        userService.delete(id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/email/{email}")
     public ResponseEntity<User> findByEmail(@PathVariable String email) {
-        User user = userService.findByEmail(email);
-        return user != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(service.findByEmail(email));
     }
 
     @GetMapping("/role/{role}")
     public ResponseEntity<List<User>> findByRole(@PathVariable Role role) {
-        return ResponseEntity.ok(userService.findByRole(role));
+        return ResponseEntity.ok(service.findByRole(role));
     }
 }

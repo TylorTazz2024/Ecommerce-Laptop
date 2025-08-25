@@ -2,33 +2,29 @@ package za.ac.cput.factory;
 
 import za.ac.cput.domain.Role;
 import za.ac.cput.domain.User;
-import za.ac.cput.domain.User;
-import za.ac.cput.domain.Role;
 import za.ac.cput.util.Helper;
 
 public class UserFactory {
 
-    public static User createUser(int userID,
-                                  String firstName,
+    public static User createUser(String firstName,
                                   String lastName,
+                                  String password,
                                   String email,
                                   String phone,
-                                  String password,
                                   Role role) {
 
         if (Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName)
-                || Helper.isNullOrEmpty(email) || Helper.isNullOrEmpty(phone)
-                || Helper.isNullOrEmpty(password) || role == null) {
-            return null;
+                || Helper.isNullOrEmpty(password) || Helper.isNullOrEmpty(email)
+                || Helper.isNullOrEmpty(phone)) {
+            throw new IllegalArgumentException("Invalid or missing values for creating User");
         }
 
         return new User.Builder()
-                .setUserID(userID)
                 .setFirstName(firstName)
                 .setLastName(lastName)
+                .setPassword(password)
                 .setEmail(email)
                 .setPhone(phone)
-                .setPassword(password)
                 .setRole(role)
                 .build();
     }
