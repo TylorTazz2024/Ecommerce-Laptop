@@ -1,11 +1,12 @@
 package za.ac.cput.factory;
+import za.ac.cput.domain.Laptop;
+import za.ac.cput.util.Helper;
 /*
 Laptop factory Class
 Author: Nontando Zondi 221248986
 */
 
-import za.ac.cput.domain.Laptop;
-import za.ac.cput.util.Helper;
+
 
 public class LaptopFactory {
 

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.domain.Laptop;
 import za.ac.cput.service.ILaptopService;
-import za.ac.cput.service.LaptopService;
+
 
 import java.util.List;
 
@@ -20,9 +20,9 @@ public class LaptopController {
         this.laptopService = laptopService;
     }
 
-    @PostMapping("/create")
-    public Laptop create(@RequestBody Laptop laptop) {
-        return laptopService.create(laptop);
+    @PostMapping("/save")
+    public Laptop save(@RequestBody Laptop laptop) {
+        return laptopService.save(laptop);
     }
 
     @GetMapping("/read/{id}")

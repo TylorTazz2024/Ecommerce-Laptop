@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ILaptopService {
 
-    Laptop create(Laptop laptop);
+    Laptop save (Laptop laptop);
 
     Laptop read(Integer integer);
 

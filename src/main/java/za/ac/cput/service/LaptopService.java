@@ -17,7 +17,7 @@ public class LaptopService implements ILaptopService {
 
 
     @Override
-    public Laptop create(Laptop laptop) {
+    public Laptop save (Laptop laptop) {
         return laptopRepository.save(laptop);
     }
 
@@ -25,6 +25,7 @@ public class LaptopService implements ILaptopService {
     public Laptop read(Integer integer) {
         return laptopRepository.findById(integer).orElse(null);
     }
+
     @Override
     public Laptop update(Laptop laptop) {
         return laptopRepository.save(laptop);
