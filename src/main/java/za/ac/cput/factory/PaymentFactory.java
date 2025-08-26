@@ -11,6 +11,10 @@ public class PaymentFactory {
             return null;
         }
 
+        if(paymentID <= 0 ) {
+            return null;
+        }
+
         if (amount <= 0) {
             throw new IllegalArgumentException("Payment amount must be positive");
         }
