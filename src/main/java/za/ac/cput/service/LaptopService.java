@@ -16,9 +16,12 @@ public class LaptopService implements ILaptopService {
     }
 
     @Override
-    public Laptop save (Laptop laptop) {
-        return laptopRepository.save(laptop);
+    public Laptop save(Laptop laptop) {
+        return null;
     }
+
+    @Override
+    public Laptop create(Laptop laptop) { return laptopRepository.save(laptop); }
 
     @Override
     public Laptop read(Integer integer) {
@@ -39,4 +42,6 @@ public class LaptopService implements ILaptopService {
     public List<Laptop> getAll() {
         return laptopRepository.findAll();
     }
+
 }
+

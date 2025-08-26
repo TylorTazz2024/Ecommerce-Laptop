@@ -6,6 +6,8 @@ public interface ILaptopService {
 
     Laptop save (Laptop laptop);
 
+    Laptop create(Laptop laptop);
+
     Laptop read(Integer integer);
 
     Laptop update(Laptop laptop);
