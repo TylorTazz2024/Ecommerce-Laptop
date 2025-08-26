@@ -47,5 +47,6 @@ public class Helper {
         if (amount <= 0) {
             throw new IllegalArgumentException("Payment amount must be positive");
         }
+
     }
 }
