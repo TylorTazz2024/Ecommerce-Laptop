@@ -1,12 +1,10 @@
 package za.ac.cput.service;
-
 import za.ac.cput.domain.Laptop;
-
 import java.util.List;
 
 public interface ILaptopService {
 
-    Laptop create(Laptop laptop);
+    Laptop save (Laptop laptop);
 
     Laptop read(Integer integer);
 

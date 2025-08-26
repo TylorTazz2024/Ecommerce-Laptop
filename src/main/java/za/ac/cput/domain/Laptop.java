@@ -1,34 +1,27 @@
 package za.ac.cput.domain;
+import jakarta.persistence.*;
 /*
 Laptop domain Class
 Author: Nontando Zondi 221248986
 */
 
-import jakarta.persistence.*;
-
-
 
 @Entity
-@Table(name = "laptop")
 public class Laptop {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int laptopID;
 
-    @Column (name = "brand")
     private String brand;
 
-    @Column (name = "model")
     private String model;
 
-    @Column (name = "specifications")
     private String specifications;
 
-    @Column (name = "price")
     private double price;
 
-    @Column(name = "condition")
     private String condition;
+
 
     public Laptop() {
     }
@@ -41,7 +34,6 @@ public class Laptop {
         this.price = builder.price;
         this.condition = builder.condition;
     }
-
 
 
     public int getLaptopID() { return laptopID; }
@@ -128,6 +120,7 @@ public class Laptop {
             this.condition = laptop.condition;
             return this;
         }
+
 
         public Laptop build() {
             return new Laptop(this);

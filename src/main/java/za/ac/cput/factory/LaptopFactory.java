@@ -1,11 +1,11 @@
 package za.ac.cput.factory;
-/*
-Laptop factory Class
-Author: Nontando Zondi 221248986
-*/
-
 import za.ac.cput.domain.Laptop;
 import za.ac.cput.util.Helper;
+
+/*
+Laptop Factory Class
+Author: Nontando Zondi 221248986
+*/
 
 public class LaptopFactory {
 
@@ -18,11 +18,12 @@ public class LaptopFactory {
             return null;
         }
 
+
         if(laptopID <= 0 || price <= 0) {
             return null;
         }
 
-        return new Laptop()
+        return new Laptop.Builder()
                 .setLaptopID(laptopID)
                 .setBrand(brand)
                 .setModel(model)

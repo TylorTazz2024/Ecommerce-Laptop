@@ -1,9 +1,9 @@
 package za.ac.cput.service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.Laptop;
 import za.ac.cput.repository.LaptopRepository;
-
 import java.util.List;
 
 @Service
@@ -15,9 +15,8 @@ public class LaptopService implements ILaptopService {
         this.laptopRepository = laptopRepository;
     }
 
-
     @Override
-    public Laptop create(Laptop laptop) {
+    public Laptop save (Laptop laptop) {
         return laptopRepository.save(laptop);
     }
 
@@ -25,6 +24,7 @@ public class LaptopService implements ILaptopService {
     public Laptop read(Integer integer) {
         return laptopRepository.findById(integer).orElse(null);
     }
+
     @Override
     public Laptop update(Laptop laptop) {
         return laptopRepository.save(laptop);
