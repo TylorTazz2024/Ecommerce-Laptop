@@ -121,6 +121,7 @@ public class Laptop {
             return this;
         }
 
+
         public Laptop build() {
             return new Laptop(this);
         }
