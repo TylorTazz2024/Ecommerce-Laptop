@@ -22,7 +22,7 @@ public class LaptopFactory {
             return null;
         }
 
-        return new Laptop()
+        return new Laptop.Builder()
                 .setLaptopID(laptopID)
                 .setBrand(brand)
                 .setModel(model)
