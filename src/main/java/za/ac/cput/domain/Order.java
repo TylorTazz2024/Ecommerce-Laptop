@@ -1,14 +1,24 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
+@Entity
+@Table(name = "orders")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int orderID;
+
     private Date orderDate;
+
     private String status;
+
     private double totalAmount;
 
+    protected Order() {}
 
     private Order(Builder builder) {
         this.orderID = builder.orderID;
@@ -17,40 +27,24 @@ public class Order {
         this.totalAmount = builder.totalAmount;
     }
 
+    public int getOrderID() { return orderID; }
+    public Date getOrderDate() { return orderDate; }
+    public String getStatus() { return status; }
+    public double getTotalAmount() { return totalAmount; }
 
-    public int getOrderID() {
-        return orderID;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Order order)) return false;
+        return orderID == order.orderID &&
+                Double.compare(order.totalAmount, totalAmount) == 0 &&
+                Objects.equals(orderDate, order.orderDate) &&
+                Objects.equals(status, order.status);
     }
 
-    public Date getOrderDate() {
-        return orderDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public double getTotalAmount() {
-        return totalAmount;
-    }
-
-
-    public void processPayment() {
-        if ("Pending".equalsIgnoreCase(status)) {
-            status = "Paid";
-            System.out.println("Payment processed for Order ID: " + orderID);
-        } else {
-            System.out.println("Order cannot be paid. Current status: " + status);
-        }
-    }
-
-    public void refundPayment() {
-        if ("Paid".equalsIgnoreCase(status)) {
-            status = "Refunded";
-            System.out.println("Refund issued for Order ID: " + orderID);
-        } else {
-            System.out.println("Refund not possible. Current status: " + status);
-        }
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderID, orderDate, status, totalAmount);
     }
 
     @Override
@@ -62,7 +56,6 @@ public class Order {
                 ", totalAmount=" + totalAmount +
                 '}';
     }
-
 
     public static class Builder {
         private int orderID;
@@ -90,7 +83,14 @@ public class Order {
             return this;
         }
 
-        // Build method
+        public Builder copy(Order order) {
+            this.orderID = order.orderID;
+            this.orderDate = order.orderDate;
+            this.status = order.status;
+            this.totalAmount = order.totalAmount;
+            return this;
+        }
+
         public Order build() {
             return new Order(this);
         }

@@ -8,7 +8,7 @@ import za.ac.cput.repository.ContactRepository;
 import java.util.List;
 
 @Service
-public class ContactService implements IContactService {
+public class ContactService implements IContactService{
 
     private final ContactRepository contactRepository;
 

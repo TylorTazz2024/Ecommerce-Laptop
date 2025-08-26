@@ -1,0 +1,52 @@
+Index: src/main/java/za/ac/cput/controller/ContactController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/za/ac/cput/controller/ContactController.java b/src/main/java/za/ac/cput/controller/ContactController.java
+new file mode 100644
+--- /dev/null	(date 1755792411468)
++++ b/src/main/java/za/ac/cput/controller/ContactController.java	(date 1755792411468)
+@@ -0,0 +1,42 @@
++package za.ac.cput.controller;
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.web.bind.annotation.*;
++import za.ac.cput.domain.Contact;
++import za.ac.cput.factory.ContactFactory;
++import za.ac.cput.service.ContactService;
++
++import java.util.List;
++
++@RestController
++@RequestMapping("/contact")
++public class ContactController {
++
++    private final ContactService service;
++
++    @Autowired
++    public ContactController(ContactService service) {
++        this.service = service;
++    }
++
++    @PostMapping("/create")
++    public Contact create(@RequestBody Contact contact) {
++        Contact newContact = ContactFactory.createContact(contact.getEmail(), contact.getPhoneNumber());
++        return service.create(newContact);
++    }
++
++    @GetMapping("/read/{id}")
++    public Contact read(@PathVariable Long id) {
++        return service.read(id);
++    }
++
++    @PutMapping("/update")
++    public Contact update(@RequestBody Contact contact) {
++        return service.update(contact);
++    }
++
++    @GetMapping("/all")
++    public List<Contact> getAll() {
++        return service.getAllContacts();
++    }
++}
