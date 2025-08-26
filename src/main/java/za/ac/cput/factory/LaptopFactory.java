@@ -2,11 +2,9 @@ package za.ac.cput.factory;
 import za.ac.cput.domain.Laptop;
 import za.ac.cput.util.Helper;
 /*
-Laptop factory Class
+Laptop Factory Class
 Author: Nontando Zondi 221248986
 */
-
-
 
 public class LaptopFactory {
 

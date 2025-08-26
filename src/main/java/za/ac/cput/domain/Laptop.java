@@ -1,6 +1,5 @@
 package za.ac.cput.domain;
 import jakarta.persistence.*;
-
 /*
 Laptop domain Class
 Author: Nontando Zondi 221248986

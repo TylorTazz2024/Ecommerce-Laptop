@@ -3,7 +3,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.Laptop;
 import za.ac.cput.repository.LaptopRepository;
-
 import java.util.List;
 
 @Service
@@ -14,7 +13,6 @@ public class LaptopService implements ILaptopService {
     public LaptopService(LaptopRepository laptopRepository) {
         this.laptopRepository = laptopRepository;
     }
-
 
     @Override
     public Laptop save (Laptop laptop) {

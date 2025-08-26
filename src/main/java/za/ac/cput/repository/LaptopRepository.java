@@ -10,6 +10,5 @@ import java.util.List;
 
 public interface LaptopRepository extends JpaRepository <Laptop, Integer>{
 
-
     void deleteById(int laptopId);
 }
