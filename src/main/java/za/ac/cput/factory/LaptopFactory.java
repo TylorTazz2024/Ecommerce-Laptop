@@ -18,6 +18,7 @@ public class LaptopFactory {
             return null;
         }
 
+
         if(laptopID <= 0 || price <= 0) {
             return null;
         }

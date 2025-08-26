@@ -7,9 +7,6 @@ Author: Nontando Zondi 221248986
 */
 
 
-
-
-
 @Entity
 public class Laptop {
     @Id

@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="378799b9-7006-4851-ba6c-e07d105b9f8f" name="Changes" comment="Laptop factory test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/factory/LaptopFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/domain/Laptop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/domain/Laptop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/ac/cput/factory/LaptopFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/za/ac/cput/factory/LaptopFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/ac/cput/factory/LaptopFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/za/ac/cput/factory/LaptopFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.LaptopFactoryTest.testCreateLaptop_withInvalidInput" />
+        <item itemvalue="JUnit.LaptopFactoryTest.testCreateLaptop_ValidInput" />
         <item itemvalue="JUnit.LaptopFactoryTest.testCreateLaptop_InvalidInput" />
         <item itemvalue="JUnit.LaptopFactoryTest" />
-        <item itemvalue="JUnit.LaptopFactoryTest.testCreateLaptop_ValidInput" />
-        <item itemvalue="JUnit.LaptopFactoryTest.testCreateLaptop_withInvalidInput" />
-        <item itemvalue="JUnit.UserControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +217,7 @@
       <workItem from="1755704239833" duration="7000" />
       <workItem from="1755792180426" duration="422000" />
       <workItem from="1755792909542" duration="582000" />
-      <workItem from="1756203819102" duration="4463000" />
+      <workItem from="1756203819102" duration="4651000" />
     </task>
     <task id="LOCAL-00001" summary="Laptop domain">
       <option name="closed" value="true" />
@@ -261,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755817270787</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Laptop factory test">
+      <option name="closed" value="true" />
+      <created>1756213833785</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756213833785</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,16 +290,5 @@
     <MESSAGE value="Laptop service" />
     <MESSAGE value="Laptop factory test" />
     <option name="LAST_COMMIT_MESSAGE" value="Laptop factory test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/za/ac/cput/factory/LaptopFactory.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
