@@ -80,5 +80,10 @@ public class Payment {
         public Payment build() {
             return new Payment(this);
         }
+
+        public Builder copy(Payment payment2) {
+
+            return null;
+        }
     }
 }
