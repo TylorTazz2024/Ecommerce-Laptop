@@ -4,11 +4,15 @@ import za.ac.cput.domain.Payment;
 import java.util.List;
 
 public interface IPaymentService {
+    Payment create(Payment payment);
 
-    Payment createPayment(Payment payment);
+    Payment read(int id);
 
-    Payment readPayment(int id);
+    Payment update(Payment payment);
 
-    List<Payment> getAllPayments();
+    void delete(int id);
+
+    List<Payment> getAll();
 }
+
 
