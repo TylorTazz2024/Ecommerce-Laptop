@@ -13,7 +13,10 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByFirstNameAndLastName(String firstName, String lastName);
 
-    User findByEmail(String email);
+    User findByContact_Email(String email);
+
+    // Login query: find user by contact email and password
+    User findByContact_EmailAndPassword(String email, String password);
 
     @Query("SELECT u FROM User u WHERE u.role = :role")
     List<User> findByRole(@Param("role") Role role);
