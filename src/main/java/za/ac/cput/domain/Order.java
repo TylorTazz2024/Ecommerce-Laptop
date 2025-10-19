@@ -1,3 +1,4 @@
+
 package za.ac.cput.domain;
 import java.util.List;
 import jakarta.persistence.ManyToOne;
