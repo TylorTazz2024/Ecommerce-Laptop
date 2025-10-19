@@ -6,4 +6,6 @@ import za.ac.cput.domain.Contact;
 
 @Repository
 public interface ContactRepository extends JpaRepository< Contact, Integer> {
+	Contact findByEmail(String email);
+	Contact findByPhoneNumber(String phoneNumber);
 }
