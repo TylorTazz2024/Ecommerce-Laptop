@@ -9,23 +9,22 @@ public class UserFactory {
     public static User createUser(String firstName,
                                   String lastName,
                                   String password,
-                                  String email,
-                                  String phone,
-                                  Role role) {
-
+                                  za.ac.cput.domain.Contact contact,
+                                  Role role,
+                                  java.util.List<za.ac.cput.domain.Order> orders,
+                                  java.util.List<za.ac.cput.domain.Review> reviews) {
         if (Helper.isNullOrEmpty(firstName) || Helper.isNullOrEmpty(lastName)
-                || Helper.isNullOrEmpty(password) || Helper.isNullOrEmpty(email)
-                || Helper.isNullOrEmpty(phone)) {
+                || Helper.isNullOrEmpty(password) || contact == null || role == null || orders == null || reviews == null) {
             throw new IllegalArgumentException("Invalid or missing values for creating User");
         }
-
         return new User.Builder()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setPassword(password)
-                .setEmail(email)
-                .setPhone(phone)
+                .setContact(contact)
                 .setRole(role)
+                .setOrders(orders)
+                .setReviews(reviews)
                 .build();
     }
 }
