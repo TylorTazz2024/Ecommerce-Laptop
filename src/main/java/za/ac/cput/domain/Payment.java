@@ -1,21 +1,33 @@
+
 package za.ac.cput.domain;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Payment {
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+    public Order getOrder() {
+        return order;
+    }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int paymentID;
 
     private double amount;
 
-    private String method;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod method;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus status;
+
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    @JsonBackReference("order-payment")
+    private Order order;
 
     public Payment() {
     }
@@ -32,9 +44,9 @@ public class Payment {
 
     public double getAmount() { return amount; }
 
-    public String getMethod() { return method; }
+    public PaymentMethod getMethod() { return method; }
 
-    public String getStatus() { return status; }
+    public PaymentStatus getStatus() { return status; }
 
     @Override
     public String toString() {
@@ -47,43 +59,44 @@ public class Payment {
     }
 
     public static class Builder {
-
         private int paymentID;
-
         private double amount;
-
-        private String method;
-
-        private String status;
-
+        private PaymentMethod method;
+        private PaymentStatus status;
+        private Order order;
 
         public Builder setPaymentID(int paymentID) {
             this.paymentID = paymentID;
             return this;
         }
-
         public Builder setAmount(double amount) {
             this.amount = amount;
             return this;
         }
-
-        public Builder setMethod(String method) {
+        public Builder setMethod(PaymentMethod method) {
             this.method = method;
             return this;
         }
-
-        public Builder setStatus(String status) {
+        public Builder setStatus(PaymentStatus status) {
             this.status = status;
             return this;
         }
-
-        public Payment build() {
-            return new Payment(this);
+        public Builder setOrder(Order order) {
+            this.order = order;
+            return this;
         }
-
-        public Builder copy(Payment payment2) {
-
-            return null;
+        public Builder copy(Payment payment) {
+            this.paymentID = payment.paymentID;
+            this.amount = payment.amount;
+            this.method = payment.method;
+            this.status = payment.status;
+            this.order = payment.order;
+            return this;
+        }
+        public Payment build() {
+            Payment payment = new Payment(this);
+            payment.setOrder(this.order);
+            return payment;
         }
     }
 }
