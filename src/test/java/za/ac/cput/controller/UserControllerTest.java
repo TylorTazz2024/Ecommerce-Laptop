@@ -7,8 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import za.ac.cput.domain.Role;
-import za.ac.cput.domain.User;
-import za.ac.cput.factory.UserFactory;
 
 import java.util.Arrays;
 import java.util.List;
