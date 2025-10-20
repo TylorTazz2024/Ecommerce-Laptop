@@ -1,12 +1,14 @@
-package za.ac.cput.repository;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+package za.ac.cput.service;
+
 import za.ac.cput.domain.Payment;
 
-@Repository
-public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+import java.util.List;
 
+public interface IPaymentService {
+    Payment create(Payment payment);
+    Payment update(Payment payment);
+    Payment read(Integer id);
+    void delete(Integer id);
+    List<Payment> getAll();
+    Payment findByOrderId(int orderId);
 }
-
-
-
