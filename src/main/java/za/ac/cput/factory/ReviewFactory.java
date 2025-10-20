@@ -5,11 +5,16 @@ import za.ac.cput.util.Helper;
 
 public class ReviewFactory {
 
-    public static Review buildReview(String rating, String comment) {
-        if (!Helper.isValidRating(rating)) {
-            throw new IllegalArgumentException("Invalid rating, must be between 1 and 5");
+    public static Review buildReview(String rating, String comment, za.ac.cput.domain.User user, za.ac.cput.domain.Laptop laptop) {
+        if (!Helper.isValidRating(rating) || user == null || laptop == null) {
+            throw new IllegalArgumentException("Invalid rating, user, or laptop");
         }
         String cleanComment = Helper.sanitizeComment(comment);
-        return new Review(rating, cleanComment);
+        return new Review.Builder()
+                .setRating(rating)
+                .setComment(cleanComment)
+                .setUser(user)
+                .setLaptop(laptop)
+                .build();
     }
 }
