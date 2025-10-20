@@ -2,17 +2,7 @@ package za.ac.cput.service;
 import za.ac.cput.domain.Laptop;
 import java.util.List;
 
-public interface ILaptopService {
-
-    Laptop save (Laptop laptop);
-
-    Laptop create(Laptop laptop);
-
-    Laptop read(Integer integer);
-
-    Laptop update(Laptop laptop);
-
-    void delete(Integer laptopId);
-
+public interface ILaptopService extends IService<Laptop, Integer> {
+    Laptop updateLaptopImage(int laptopId, byte[] image);
     List<Laptop> getAll();
 }
