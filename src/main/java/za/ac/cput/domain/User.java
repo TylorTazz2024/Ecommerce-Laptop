@@ -46,6 +46,10 @@ public class User {
     public String getPhone() { return phone; }
     public Role getRole() { return role; }
 
+    public Contact getContact() {
+        return null;
+    }
+
     // --- Builder Pattern ---
     public static class Builder {
         private Long userID;
