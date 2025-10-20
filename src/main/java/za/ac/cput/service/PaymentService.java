@@ -6,11 +6,9 @@ import za.ac.cput.domain.Payment;
 import za.ac.cput.repository.PaymentRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PaymentService implements IPaymentService {
-
     private final PaymentRepository paymentRepository;
 
     @Autowired
@@ -18,40 +16,36 @@ public class PaymentService implements IPaymentService {
         this.paymentRepository = paymentRepository;
     }
 
-
     @Override
     public Payment create(Payment payment) {
-        if (payment.getAmount() <= 0) {
-            throw new IllegalArgumentException("Payment amount must be positive");
-        }
         return paymentRepository.save(payment);
     }
 
     @Override
-    public Payment read(int id) {
-        Optional<Payment> payment = paymentRepository.findById(id);
-        return payment.orElse(null);
+    public Payment read(Integer id) {
+        return paymentRepository.findById(id).orElse(null);
     }
 
     @Override
     public Payment update(Payment payment) {
-        if (!paymentRepository.existsById(payment.getPaymentID())) {
-            return null; // Payment doesn't exist
+        if (paymentRepository.existsById(payment.getPaymentID())) {
+            return paymentRepository.save(payment);
         }
-        return paymentRepository.save(payment);
+        return null;
     }
 
     @Override
-    public void delete(int id) {
-        if (paymentRepository.existsById(id)) {
-            paymentRepository.deleteById(id);
-        }
+    public void delete(Integer id) {
+        paymentRepository.deleteById(id);
     }
 
     @Override
     public List<Payment> getAll() {
         return paymentRepository.findAll();
     }
+
+    @Override
+    public Payment findByOrderId(int orderId) {
+        return paymentRepository.findByOrder_OrderID(orderId);
+    }
 }
-
-
