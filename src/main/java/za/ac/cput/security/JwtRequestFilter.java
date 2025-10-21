@@ -79,6 +79,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
                 }
             } catch (Exception e) {
+
                 // Log warning but don't crash - invalid/expired tokens are normal
                 logger.warn("JWT authentication failed for user '" + username + "': " + e.getMessage());
                 // Ensure security context is clean
