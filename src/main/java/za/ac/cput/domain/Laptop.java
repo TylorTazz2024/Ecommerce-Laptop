@@ -1,37 +1,47 @@
 package za.ac.cput.domain;
+import java.util.List;
+import jakarta.persistence.*;
+import jakarta.persistence.OneToMany;
+
 /*
 Laptop domain Class
 Author: Nontando Zondi 221248986
 */
 
-import jakarta.persistence.*;
-
-
 
 @Entity
-@Table(name = "laptop")
 public class Laptop {
+    public void setBrand(String brand) { this.brand = brand; }
+    public void setModel(String model) { this.model = model; }
+    public void setSpecifications(String specifications) { this.specifications = specifications; }
+    public void setPrice(double price) { this.price = price; }
+    public void setLaptopCondition(String laptopCondition) { this.laptopCondition = laptopCondition; }
+    public void setImage(byte[] image) { this.image = image; }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int laptopID;
 
-    @Column (name = "brand")
     private String brand;
 
-    @Column (name = "model")
     private String model;
 
-    @Column (name = "specifications")
     private String specifications;
 
-    @Column (name = "price")
     private double price;
 
-    @Column(name = "condition")
-    private String condition;
+    private String laptopCondition;
 
-    public Laptop() {
-    }
+    @OneToMany(mappedBy = "laptop")
+    private List<Review> reviews;
+
+    @OneToMany(mappedBy = "laptop")
+    private List<OrderLaptop> orderLaptops;
+
+    @Lob
+    @Column(columnDefinition = "LONGBLOB")
+    private byte[] image;
+
+    public Laptop() {}
 
     private Laptop (Builder builder) {
         this.laptopID = builder.laptopID;
@@ -39,22 +49,18 @@ public class Laptop {
         this.model = builder.model;
         this.specifications = builder.specifications;
         this.price = builder.price;
-        this.condition = builder.condition;
+        this.laptopCondition = builder.laptopCondition;
+        this.image = builder.image;
     }
 
 
-
     public int getLaptopID() { return laptopID; }
-
     public String getBrand() { return brand; }
-
     public String getModel() { return model; }
-
     public String getSpecifications() { return specifications; }
-
     public double getPrice() { return price; }
-
-    public String getCondition() { return condition; }
+    public String getLaptopCondition() { return laptopCondition; }
+    public byte[] getImage() { return image; }
 
 
     @Override
@@ -65,28 +71,26 @@ public class Laptop {
                 ", model='" + model + '\'' +
                 ", specifications='" + specifications + '\'' +
                 ", price=" + price +
-                ", condition='" + condition + '\'' +
+                ", laptopCondition='" + laptopCondition + '\'' +
                 '}';
-    }
-
-    public Builder setLaptopID(int laptopID) {
-        return null;
     }
 
 
     public static class Builder {
 
         private int laptopID;
-
         private String brand;
-
         private String model;
-
         private String specifications;
-
         private double price;
-
-        private String condition;
+        private String laptopCondition;
+        private List<OrderLaptop> orderLaptops;
+        private List<Review> reviews;
+        private byte[] image;
+        public Builder setImage(byte[] image) {
+            this.image = image;
+            return this;
+        }
 
 
         public Builder setLaptopID(int laptopID) {
@@ -114,8 +118,16 @@ public class Laptop {
             return this;
         }
 
-        public Builder setCondition(String condition) {
-            this.condition = condition;
+        public Builder setLaptopCondition(String laptopCondition) {
+            this.laptopCondition = laptopCondition;
+            return this;
+        }
+        public Builder setOrderLaptops(List<OrderLaptop> orderLaptops) {
+            this.orderLaptops = orderLaptops;
+            return this;
+        }
+        public Builder setReviews(List<Review> reviews) {
+            this.reviews = reviews;
             return this;
         }
 
@@ -125,12 +137,19 @@ public class Laptop {
             this.model = laptop.model;
             this.specifications = laptop.specifications;
             this.price = laptop.price;
-            this.condition = laptop.condition;
+            this.laptopCondition = laptop.laptopCondition;
+            this.orderLaptops = laptop.orderLaptops;
+            this.reviews = laptop.reviews;
+            this.image = laptop.image;
             return this;
         }
 
+
         public Laptop build() {
-            return new Laptop(this);
+            Laptop laptop = new Laptop(this);
+            laptop.orderLaptops = this.orderLaptops;
+            laptop.reviews = this.reviews;
+            return laptop;
         }
     }
 }

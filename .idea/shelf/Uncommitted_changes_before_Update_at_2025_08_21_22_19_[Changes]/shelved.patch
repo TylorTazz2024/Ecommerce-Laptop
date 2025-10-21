@@ -1,0 +1,17 @@
+Index: src/main/java/za/ac/cput/service/IContactService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package za.ac.cput.service;\r\n\r\nimport java.util.List;\r\nimport za.ac.cput.domain.Contact;\r\n\r\n\r\npublic interface IContactService {\r\n    Contact create(Contact contact);\r\n    Contact read(int id);\r\n    Contact update(Contact contact);\r\n    boolean delete(int id);\r\n\r\n    List<Contact> getAllContacts();\r\n      }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/za/ac/cput/service/IContactService.java b/src/main/java/za/ac/cput/service/IContactService.java
+--- a/src/main/java/za/ac/cput/service/IContactService.java	(revision 2a314bf2bb0c8157d698bf9fea41b2e0f2dd9b4f)
++++ b/src/main/java/za/ac/cput/service/IContactService.java	(date 1755807517188)
+@@ -9,6 +9,5 @@
+     Contact read(int id);
+     Contact update(Contact contact);
+     boolean delete(int id);
+-
+     List<Contact> getAllContacts();
+       }
