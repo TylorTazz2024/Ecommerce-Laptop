@@ -80,5 +80,9 @@ public class User {
         }
 
         public User build() { return new User(this); }
+
+        public Builder setContact(Contact adminContact) {
+            return null;
+        }
     }
 }
